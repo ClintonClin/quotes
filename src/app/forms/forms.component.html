@@ -1,28 +1,36 @@
-<form class="myform" #f="ngForm" name="form">
-  <hr width="70%">
-  <div class="container-fluid">
-    <div class ="row no-gutter">
-      <div class="col-md-5">
-          <br>
-          <br>
-          <br>
-        <div class="form-group">
-          <label for="author">Author</label>
-          <input type="text" class="form-control" [(ngModel)]= "model.author" #author="ngModel" [ngClass]="{'is-invalid':f.submitted && author.invalid}" name="author" required>
-        </div>
-          <div class="form-group">
-            <label for="submitter">Submitter</label>
-            <input type="text" class="form-control" name="submitter" [(ngModel)]= "model.submitter" #author="ngModel" [ngClass]="{'is-invalid':f.submitted && submitter.invalid}" name="submitter" required>
+<form class="myform" #quoteForm="ngForm" (ngSubmit)="saveQuote(quoteForm)">
+    <hr width="70%">
+    <div class="container-fluid">
+       <br>
+       <br>
+       <br>
+       <div class ="row no-gutter">
+          <div class="col-md-5">
+             <br>
+             <br>
+             <br>
+             <div class ="panel panel-primary">
+                <div class ="panel-heading">
+                   <h3 class ="panel-title">Create Quote</h3>
+                </div>
+                <div class="form-group">
+                   <label for="author">Author</label>
+                   <input type="text" class="form-control" [(ngModel)]= "author" name= "author"  id="author" #authorControl="ngModel" required>
+                </div>
+                <div class="form-group">
+                   <label for="submitter">Submitter</label>
+                   <input type="text" class="form-control" name="submitter" [(ngModel)]= "submitter"  id="submitter">
+                </div>
+                <div class="form-group">
+                   <label for="enterquote">Enter Quote</label>
+                   <textarea class="form-control" type="text" [(ngModel)]= "enterQuote" name= "enterQuote"  id="enterquote" rows="7"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+             </div>
           </div>
-          <div class="form-group">
-              <label for="enterquote">Enter Quote</label>
-              <textarea class="form-control" id="enterquote" rows="3"></textarea>
-            </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-      </div>
-      <div class="col-md-7">
-      </div>
-   </div> 
-  </div>
-</form>
+       </div>
+       <div class="col-md-7">
+       </div>
+    </div>
+ </form>
 
