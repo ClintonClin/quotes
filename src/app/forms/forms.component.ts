@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-forms',
@@ -12,5 +13,7 @@ export class FormsComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  saveQuote(qForm : NgForm) : void{
+      console.log(qForm);
+    }
 }
