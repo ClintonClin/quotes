@@ -1,19 +1,24 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-
+import { Component, OnInit ,Output, EventEmitter} from '@angular/core';
+import {Quote} from '../quote';
 @Component({
   selector: 'app-forms',
   templateUrl: './forms.component.html',
   styleUrls: ['./forms.component.css']
 })
 export class FormsComponent implements OnInit {
-  model:any = {}
+  
+  newQuote = new Quote(0, "", "",0, 0, "");
+
+  @Output() addQuote=new EventEmitter<Quote>();
+
+  saveQuote(){
+        this.addQuote.emit(this.newQuote);
+        this.newQuote = new Quote(0, "", "",0, 0, "");
+  }  
 
   constructor() { }
 
   ngOnInit() {
   }
-  saveQuote(qForm : NgForm) : void{
-      console.log(qForm);
-    }
+    
 }
