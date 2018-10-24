@@ -11,7 +11,7 @@ export class Quote {
          public downVote:number,
         public submitter: string,) {
 
-       
+            this.submitDate = new Date();
     }
 
 }
