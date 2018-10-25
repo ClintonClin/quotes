@@ -14,7 +14,7 @@
       <br>
       <div class="display-quotes" *ngFor='let quote of quotes, let i = index'>
         <blockquote>
-          <h4 class="style">"{{quote.enterQuote}}"</h4>
+          <h4 class="style">{{quote.enterQuote}}<br> <br>  due on <br> {{quote.submitDate | date}}</h4>
         </blockquote>
         <div class="details">
           <cite>--{{quote.author}}</cite>
